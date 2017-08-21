@@ -4,7 +4,8 @@
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) 21: React Tooling ======",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
+    "react-cowsay": "^0.1.0",
     "react-dom": "^15.6.1",
     "sass-loader": "^6.0.6",
     "webpack": "^3.5.5",

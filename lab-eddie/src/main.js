@@ -30,7 +30,7 @@ class CowBody extends React.Component {
     return(
       <div className="test">
         <button onClick={this.newIpsum}>'Please Click Meeeeeee'</button>
-        <p>{this.state.cow}</p>
+        <pre>{this.state.cow}</pre>
       </div>
     )
   }

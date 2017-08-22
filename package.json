@@ -1,0 +1,20 @@
+{
+  "name": "21-react-tooling",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) 21: React Tooling ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohjonah/21-react-tooling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ohjonah/21-react-tooling/issues"
+  },
+  "homepage": "https://github.com/ohjonah/21-react-tooling#readme"
+}

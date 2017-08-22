@@ -4,20 +4,6 @@ import ReactDom from 'react-dom';
 import cowsay from 'cowsay-browser';
 import faker from 'faker';
 
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <header className='my-header'>
-        <h1>CowSay App</h1>
-      </header>
-    );
-  }
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +29,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <h2>Generate Cowsay Lorem</h2>
         <button onClick={this.handleClick}>Click Here</button>
         <pre>{this.state.content}</pre>

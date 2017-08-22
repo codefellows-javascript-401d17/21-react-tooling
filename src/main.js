@@ -1,8 +1,9 @@
 import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
+import cowsay from 'cowsay-browser';
 import faker from 'faker';
-import cowsay from 'cowsay';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <header className='custom-header'>
-        <h1>Cow Say App</h1>
+      <header className='cowsay-header'>
+        <h1>My Cow Say App</h1>
       </header>
     );
   }
@@ -22,9 +23,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      words: cowsay.say({
-        text: faker.lorem.words(5)
-      }),
+      content: cowsay.say({ text: 'hello' })
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -32,9 +31,8 @@ class App extends React.Component {
 
   handleClick(e) {
     this.setState(state => {
-      return { words: cowsay.say({
-        text: faker.lorem.words(3)
-        })
+      return {
+        content: cowsay.say({ text: faker.lorem.words()})
       }
     });
   }
@@ -43,8 +41,8 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <button onClick={this.handleClick}>'wut duz kow sae?'</button>
-        <pre>{this.state.words}</pre>
+        <button onClick={this.handleClick}>wut duz kow sae?</button>
+        <pre>{this.state.content}</pre>
       </div>
     )
   }

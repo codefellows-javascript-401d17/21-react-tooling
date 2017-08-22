@@ -5,7 +5,7 @@ const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: `${__dirname}/src/main.js`,
+  entry: `${__dirname}/src/main.jsx`,
   output: {
     path: `${__dirname}/build`,
     publicPath: '/',
@@ -18,10 +18,11 @@ module.exports = {
   module:{
     rules:[
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /nodemodules/,
         loader: 'babel-loader'
       },
+
       {
         test: /\.scss/,
         loader: ExtractPlugin.extract(['css-loader', 'sass-loader'])

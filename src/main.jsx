@@ -12,7 +12,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <header className='custom-header'>
-      <h1>Generate Cowsay Lorem</h1>
+        <h1>Generate Cowsay Lorem</h1>
       </header>
     );
   }
@@ -23,7 +23,7 @@ class CowsayLorem extends React.Component {
     super(props);
     this.state = {
       text: faker.lorem.words(),
-      value: 'tux'
+      value: 'cow'
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -42,18 +42,21 @@ class CowsayLorem extends React.Component {
   render() {
     const cow = cowsay.say({ text: this.state.text , f: this.state.value });
     return (
-      <div>
+      <div id = 'all'>
         <Navbar />
         <pre>
           {cow}
-          </pre>
-      <button type ='button' onClick = {this.handleClick}>click me</button>
-      <select value={this.state.value} onChange={this.handleChange}>
-        <option value='tux'>Tux</option>
-        <option value='koala'>Koala</option>
-        <option value='moose'>Moose</option>
-        <option value='vader'>Vader</option>
-      </select>
+        </pre>
+        <div>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value='cow'>Cow</option>
+            <option value='tux'>Tux</option>
+            <option value='koala'>Koala</option>
+            <option value='moose'>Moose</option>
+            <option value='vader'>Vader</option>
+          </select>
+          <button type ='button' onClick = {this.handleClick}>click me!!!</button>
+        </div>
       </div>
     )
   }

@@ -22,8 +22,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cowsay: cowsay.say({
-        text: faker.lorem.words(20),
+      content: cowsay.say({
+        text: faker.lorem.sentence(20),
       }),
 
     };
@@ -34,8 +34,8 @@ class App extends React.Component {
   handleClick(e) {
     this.setState( state => {
       return {
-        cowsay: cowsay.say({
-          text: faker.lorem.words(20),
+        content: cowsay.say({
+          text: faker.lorem.sentence(20),
         }),
       }
     });
@@ -46,7 +46,7 @@ class App extends React.Component {
         <Navbar />
         <h2>Generate Cowsay Lorem</h2>
         <button onClick={this.handleClick}>Click Here</button>
-        <pre>{this.state.cowsay}</pre>
+        <pre>{this.state.content}</pre>
       </div>
     )
   }

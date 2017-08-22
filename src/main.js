@@ -32,7 +32,11 @@ class App extends React.Component {
   handleClick(e) {
     this.setState(state => {
       return {
-        content: cowsay.say({ text: faker.lorem.words()})
+        content: cowsay.say({
+          text: faker.lorem.words(),
+          e: 'oO',
+          T: ' U'
+        })
       }
     });
   }

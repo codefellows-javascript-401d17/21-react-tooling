@@ -1,6 +1,8 @@
 import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
+import faker from 'faker';
+import cowsay from 'cowsay';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <header className='custom-header'>
-        <h1>Counter App</h1>
+        <h1>Cow Say App</h1>
       </header>
     );
   }
@@ -20,17 +22,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'hello world',
-      count: 0
+      words: cowsay.say({
+        text: faker.lorem.words(5)
+      }),
     };
 
-    this.happening = 'eclipse';
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
     this.setState(state => {
-      return { count: state.count + 1 }
+      return { words: cowsay.say({
+        text: faker.lorem.words(3)
+        })
+      }
     });
   }
 
@@ -38,8 +43,8 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <p onClick={this.handleClick}>Counter: {this.state.count}</p>
-        <p>{this.happening}</p>
+        <button onClick={this.handleClick}>'wut duz kow sae?'</button>
+        <pre>{this.state.words}</pre>
       </div>
     )
   }

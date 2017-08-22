@@ -27,5 +27,8 @@ module.exports = {
         loader: ExtractPlugin.extract(['css-loader', 'sass-loader'])
       }
     ]
+  },
+  node: {
+    fs: 'empty'
   }
 };

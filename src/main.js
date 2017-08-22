@@ -23,9 +23,11 @@ class CowsayLorem extends React.Component {
     super(props);
     this.state = {
       text: faker.lorem.words(),
+      value: 'tux'
     }
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   handleClick(e) {
     this.setState(state => {
@@ -33,15 +35,25 @@ class CowsayLorem extends React.Component {
     });
   }
 
+  handleChange(e) {
+    this.setState({value: e.target.value})
+  }
+
   render() {
-    const cow = cowsay.say({ text: this.state.text });
+    const cow = cowsay.say({ text: this.state.text , f: this.state.value });
     return (
       <div>
         <Navbar />
         <pre>
           {cow}
-        </pre>
-        <button type ='button' onClick = {this.handleClick}>click me</button>
+          </pre>
+      <button type ='button' onClick = {this.handleClick}>click me</button>
+      <select value={this.state.value} onChange={this.handleChange}>
+        <option value='tux'>Tux</option>
+        <option value='koala'>Koala</option>
+        <option value='moose'>Moose</option>
+        <option value='vader'>Vader</option>
+      </select>
       </div>
     )
   }
